@@ -32,10 +32,11 @@ class ParkingLot:
         if emptySlotIndex is None:
             print("Cannot park. No parking slots available")
         else:
-            self.slots[emptySlotIndex] = Slot(
-                driverAge, registrationId, slotNumber)
+            self.slots[emptySlotIndex] = Slot(driverAge, registrationId,
+                                              slotNumber)
             print(
-                f"Car with vehicle registration number \"{registrationId}\" has been parked at slot number {slotNumber}")
+                f"Car with vehicle registration number \"{registrationId}\" has been parked at slot number {slotNumber}"
+            )
 
     def getSlotNumbersHavingDriversAge(self, age: int):
         result = ""
@@ -55,7 +56,8 @@ class ParkingLot:
 
         if slot == -1:
             print(
-                f"No slot number found with registration id \"{registrationId}\"")
+                f"No slot number found with registration id \"{registrationId}\""
+            )
         else:
             print(slot)
 
@@ -70,13 +72,13 @@ class ParkingLot:
     def clearSlot(self, slotNumber: int):
         slot = self.getSlotDetailsBySlotNumber(slotNumber)
         if slot is None:
-            print(
-                f"Cannot clear parking slot with slot number {slotNumber}. No vehicle found with given slot number")
+            print("Slot already vacant")
         else:
             slotIndex = slotNumber - 1
             self.slots[slotIndex] = None
             print(
-                f"Slot number 2 vacated, the car with vehicle registration number \"{slot.getRegistrationId()}\" left the space, the driver of the car was of age {slot.getDriverAge()}")
+                f"Slot number 2 vacated, the car with vehicle registration number \"{slot.getRegistrationId()}\" left the space, the driver of the car was of age {slot.getDriverAge()}"
+            )
 
     def getAllSlotsOccupiedByAge(self, age: int):
         slots = []
@@ -86,4 +88,5 @@ class ParkingLot:
 
         for slot in slots:
             print(
-                f'Car with vehicle registration number \"{slot.getRegistrationId()}\" has been parked at slot number {slot.getSlotNumber()}')
+                f'Car with vehicle registration number \"{slot.getRegistrationId()}\" has been parked at slot number {slot.getSlotNumber()}'
+            )
