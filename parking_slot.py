@@ -44,8 +44,12 @@ class ParkingLot:
             if slot is not None:
                 slot.getDriverAge() == age
                 result = result + str(slot.getSlotNumber()) + ","
-        result = result[0:-1]
-        print(result)
+
+        if (len(result) == 0):
+            print(f"No vehicles found having driver age {age}")
+        else:
+            result = result[0:-1]
+            print(result)
 
     def getSlotNumberByRegistrationId(self, registrationId: str):
         slot = -1
